@@ -1,36 +1,14 @@
-function barchart() {
-    d3.select("svg")
-            .append("line")
-            .attr("x1", 20)
-            .attr("y1", 20)
-            .attr("x2",400)
-            .attr("y2",400)
-            .style("stroke", "red")
-            .style("stroke-width","2px");
-        d3.select("svg")
-            .append("text")
-            .attr("x",20)
-            .attr("y",20)
-            .text("HELLO");
-        d3.select("svg")
-            .append("circle")
-            .attr("r", 20)
-            .attr("cx",20)
-            .attr("cy",20)
-            .style("fill","red");
-        d3.select("svg")
-            .append("circle")
-            .attr("r", 100)
-            .attr("cx",400)
-            .attr("cy",400)
-            .style("fill","lightblue");
-        d3.select("svg")
-            .append("text")
-            .attr("x",400)
-            .attr("y",400)
-            .text("WORLD");
+async function plotCharts() {
+    // load data
+    const citeis = await d3.csv("data/cities.csv");
+    const { tweets } = await d3.json("data/tweets.json");
+    console.log(citeis);
+    console.log(tweets);
+
+    // barchart("#barchart");
 }
 
-barchart();
+function barchart(elem) {
+}
 
-console.log("AQUI")
+plotCharts();
